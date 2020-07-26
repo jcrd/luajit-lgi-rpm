@@ -1,0 +1,14 @@
+FROM supplantr/toolbox
+
+RUN dnf install -y make
+RUN dnf install -y gcc
+RUN dnf install -y gobject-introspection-devel
+RUN dnf install -y luajit
+RUN dnf install -y luajit-devel
+RUN dnf install -y lua-markdown
+
+# make check requirements.
+RUN dnf install -y xorg-x11-server-Xvfb
+RUN dnf install -y dbus-x11
+RUN dnf install -y at-spi2-core
+RUN dnf install -y gtk3-devel
