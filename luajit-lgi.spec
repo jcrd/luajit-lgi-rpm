@@ -4,35 +4,35 @@
 %global luapkgdir %{_datadir}/lua/%{luaver}
 %global luajitincludedir %{_includedir}/luajit-%{luajitver}
 
-Name:		luajit-lgi
-Version:	0.9.2
-Release:	1%{?dist}
-Summary:	Luajit bindings to GObject libraries
-License:	MIT
-URL:		https://github.com/pavouk/lgi
-Source0:	https://github.com/pavouk/lgi/archive/%{version}/lgi-%{version}.tar.gz
+Name:       luajit-lgi
+Version:    0.9.2
+Release:    1%{?dist}
+Summary:    Luajit bindings to GObject libraries
+License:    MIT
+URL:        https://github.com/pavouk/lgi
+Source0:    https://github.com/pavouk/lgi/archive/%{version}/lgi-%{version}.tar.gz
 # see gh#212 (commit a127f82)
 Patch0:         lgi-0.9.2-fix-s390x.patch
 # see gh#215
 Patch1:         lgi-0.9.2-fix-gobject-warnings.patch
-BuildRequires:	pkgconfig(gobject-introspection-1.0) >= 0.10.8
-BuildRequires:	pkgconfig(gmodule-2.0)
-BuildRequires:	pkgconfig(libffi)
-BuildRequires:	luajit >= %{luajitver}
-BuildRequires:	luajit-devel >= %{luajitver}
-BuildRequires:	lua-markdown
+BuildRequires:  pkgconfig(gobject-introspection-1.0) >= 0.10.8
+BuildRequires:  pkgconfig(gmodule-2.0)
+BuildRequires:  pkgconfig(libffi)
+BuildRequires:  luajit >= %{luajitver}
+BuildRequires:  luajit-devel >= %{luajitver}
+BuildRequires:  lua-markdown
 # for the testsuite:
-BuildRequires:	pkgconfig(gio-2.0)
-BuildRequires:	pkgconfig(cairo)
-BuildRequires:	pkgconfig(cairo-gobject)
-BuildRequires:	pkgconfig(gtk+-3.0)
-BuildRequires:	gcc
-BuildRequires:	make
-BuildRequires:	which
-BuildRequires:	Xvfb xauth
-BuildRequires:	dbus-x11 at-spi2-core
+BuildRequires:  pkgconfig(gio-2.0)
+BuildRequires:  pkgconfig(cairo)
+BuildRequires:  pkgconfig(cairo-gobject)
+BuildRequires:  pkgconfig(gtk+-3.0)
+BuildRequires:  gcc
+BuildRequires:  make
+BuildRequires:  which
+BuildRequires:  Xvfb xauth
+BuildRequires:  dbus-x11 at-spi2-core
 
-Requires:	luajit >= %{luajitver}
+Requires:   luajit >= %{luajitver}
 
 %global __requires_exclude_from %{_docdir}
 %{!?_pkgdocdir: %global _pkgdocdir %{_docdir}/%{name}-%{version}}
